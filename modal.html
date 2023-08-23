@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins",sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+button{
+    padding: 1rem 2rem;
+    font-size: 20px;
+    cursor: pointer;
+}
+.mymodal{
+    width: 63%;
+    background-color: white;
+    /* position: relative; */
+    display: none;
+    position: fixed;
+    top: 20px;
+    /* left: 20%; */
+    transition: all 0.5s ease;
+}
+.modalcontent{
+    position: relative;
+}
+.modalcontent header{
+background-color: rgba(255, 0, 0, 0.8);
+color: white;
+padding: 1.5rem;
+font-weight: 500;
+}
+.modalcontent main{
+background-color:white;
+color: #333;
+padding: 2rem 1.7rem;
+}
+.modalcontent main span{
+    margin-bottom: 1rem;
+    font-weight:650;
+    display: inline-block;
+}
+.modalcontent main p{
+    font-weight: 650;
+}
+.modalcontent footer{
+background-color:rgba(255, 0, 0, 0.8);
+color: white;
+padding: 1.3rem 1.7rem;
+}
+.closebtn{
+    font-size: 30px;
+    font-weight: 500;
+    position: absolute;
+    top: 27px;
+    right: 10px;
+    color: white;
+    cursor: pointer;
+}
+</style>
+    </head>
+    <body>
+        <button class="mybtn" onclick="modelFunction()">open model</button>
+
+        <div class="mymodal" id="model">
+            <div class="modalcontent">
+                <span class="closebtn" onclick="modelclose()">&times;</span>
+                <header>
+                    <h1>Modal header</h1>
+                </header>
+                <main>
+                    <span>Hello world</span>
+                    <p>Modals are awesome</p>
+                </main>
+
+                <footer>
+                    <h3>Modal footer</h3>
+
+                </footer>
+            </div>
+
+        </div>
+        <!-- javascript -->
+        <script>
+                 function modelFunction(){
+                     let model =document.getElementById('model');
+                   model.style.display ="block";
+            }      
+            function modelclose(){
+         let model =document.getElementById('model');
+
+            model.style.display ="none";
+            } 
+           
+                    let model =document.getElementById('model');
+            window.addEventListener('click',function(event){
+                if(event.target == model){
+                    model.style.display = "none";
+                }
+            })
+    </script>
+    </body>
+</html>
